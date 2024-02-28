@@ -12,4 +12,9 @@ class TurtleP(Turtle):
         self.forward(20)
     
     def move_down(self):
-        self.backward(20)
+        if self.ycor() > -280:
+            self.backward(20)
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("Game Over", align="center", font=("Arial", 20, "normal"))
